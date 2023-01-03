@@ -12,18 +12,17 @@ import org.junit.jupiter.api.Test;
 class CodeChallengeApiIT {
 
   private final CodeChallengesApi api = new CodeChallengesApi();
-  private final CodeChallenge trivial = Stubs.read("challenge-a-plus-b.json", CodeChallenge.class);
+  private final CodeChallenge test = Stubs.read("challenge-test.json", CodeChallenge.class);
   private final CodeChallenge beta = Stubs.read("challenge-camelcasing.json", CodeChallenge.class);
-  private final CodeChallenge retired = Stubs.read("challenge-calculator.json", CodeChallenge.class);
 
   @Test
   void getCodeChallengeById() {
-    assertEquals(trivial, api.getCodeChallenge("5512a0b0509063e57d0003f5"));
+    assertEquals(test, api.getCodeChallenge("63b4a727494439003e4f63d5"));
   }
 
   @Test
   void getCodeChallengeBySlug() {
-    assertEquals(trivial, api.getCodeChallenge("a-plus-b"));
+    assertEquals(test, api.getCodeChallenge("paranoidusers-kata-number-2"));
   }
 
   @Test
@@ -32,15 +31,10 @@ class CodeChallengeApiIT {
   }
 
   @Test
-  void getRetiredChallenge() {
-    assertEquals(retired, api.getCodeChallenge("calculator"));
-  }
-
-  @Test
   void getCodeChallengeWithHttpInfo() {
-    ApiResponse<CodeChallenge> challengeResponse = api.getCodeChallengeWithHttpInfo("a-plus-b");
+    ApiResponse<CodeChallenge> challengeResponse = api.getCodeChallengeWithHttpInfo("paranoidusers-kata-number-2");
     assertEquals(200, challengeResponse.getStatusCode());
-    assertEquals(trivial, challengeResponse.getData());
+    assertEquals(test, challengeResponse.getData());
   }
 
   @Test
@@ -50,8 +44,7 @@ class CodeChallengeApiIT {
     assertEquals(
         "{\"success\":false,\"reason\":\"\\n" +
             "message:\\n  Document(s) not found for class CodeChallenge with id(s) test-challenge-not-found.\\n" +
-            "summary:\\n  When calling CodeChallenge.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): test-challenge-not-found ... (1 total) and the following ids were not found: test-challenge-not-found.\\n"
-            +
+            "summary:\\n  When calling CodeChallenge.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): test-challenge-not-found ... (1 total) and the following ids were not found: test-challenge-not-found.\\n" +
             "resolution:\\n  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.\"}",
         error.getResponseBody());
   }
