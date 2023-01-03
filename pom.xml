@@ -20,6 +20,7 @@
 
   <modules>
     <module>codewars-sdk-client</module>
+    <module>codewars-sdk-sample</module>
   </modules>
 
   <properties>
