@@ -1,0 +1,50 @@
+{
+  "id": "5235c913397cbf2508000048",
+  "name": "Calculator",
+  "slug": "calculator",
+  "category": "algorithms",
+  "publishedAt": "2013-09-15T15:41:03.565Z",
+  "approvedAt": "2013-11-21T23:56:19.630Z",
+  "languages": [
+    "ruby",
+    "python",
+    "csharp",
+    "java",
+    "haskell",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5235c913397cbf2508000048",
+  "rank": {
+    "id": -3,
+    "name": "3 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2013-09-15T14:49:55.796Z",
+  "createdBy": {
+    "username": "obrok",
+    "url": "https://www.codewars.com/users/obrok"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Create a simple calculator that given a string of operators (), +, -, *, / and numbers separated by spaces returns the value of that expression\n\nExample:\n\n```python\nCalculator().evaluate(\"2 / 2 + 3 * 4 - 6\") # =\u003e 7\n```\n```ruby\nCalculator.new.evaluate(\"2 / 2 + 3 * 4 - 6\") # =\u003e 7\n```\n```java\nCalculator.evaluate(\"2 / 2 + 3 * 4 - 6\") // =\u003e 7\n```\n```haskell\nCalculator.evaluate \"2 / 2 + 3 * 4 - 6\" // =\u003e 7.0\n```\n\nRemember about the order of operations! Multiplications and divisions have a higher priority and should be performed left-to-right. Additions and subtractions have a lower priority and should also be performed left-to-right.",
+  "totalAttempts": 153965,
+  "totalCompleted": 11547,
+  "totalStars": 1380,
+  "voteScore": 1149,
+  "tags": [
+    "Algorithms",
+    "Parsing",
+    "Logic",
+    "Strings",
+    "Expressions",
+    "Basic Language Features",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

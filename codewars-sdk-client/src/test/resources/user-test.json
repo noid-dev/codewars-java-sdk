@@ -1,0 +1,32 @@
+{
+  "id": "604ef9a5ac4fd00011f78eb0",
+  "username": "test-user",
+  "name": "Test User",
+  "honor": 5,
+  "clan": "test clan",
+  "leaderboardPosition": null,
+  "skills": [
+    "ruby",
+    "javascript"
+  ],
+  "ranks": {
+    "overall": {
+      "rank": -8,
+      "name": "8 kyu",
+      "color": "white",
+      "score": 4
+    },
+    "languages": {
+      "java": {
+        "rank": -8,
+        "name": "8 kyu",
+        "color": "white",
+        "score": 4
+      }
+    }
+  },
+  "codeChallenges": {
+    "totalAuthored": 0,
+    "totalCompleted": 2
+  }
+}

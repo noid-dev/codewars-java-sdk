@@ -1,0 +1,33 @@
+{
+  "id": "54c15f6e6fd290a542000135",
+  "name": "CaMeLcAsInG",
+  "slug": "camelcasing",
+  "category": "reference",
+  "publishedAt": "2015-01-22T20:37:11.628Z",
+  "approvedAt": null,
+  "languages": [
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/54c15f6e6fd290a542000135",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2015-01-22T20:37:02.739Z",
+  "createdBy": {
+    "username": "Ninja Isle",
+    "url": "https://www.codewars.com/users/Ninja%20Isle"
+  },
+  "description": "You are given a string with a length of 0 or greater. You should transform this string so its characters alternate between uppercase and lowercase.\n\n-This input will never be null.\n-The first letter of the input might be uppercase or lowercase.\n-There will be no special characters or numbers.\n-The input will always consist of one word (no spaces).",
+  "totalAttempts": 753,
+  "totalCompleted": 342,
+  "totalStars": 9,
+  "voteScore": 161,
+  "tags": [],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

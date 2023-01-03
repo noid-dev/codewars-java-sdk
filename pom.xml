@@ -18,6 +18,10 @@
     <url>https://github.com/noid-dev/</url>
   </organization>
 
+  <modules>
+    <module>codewars-sdk-client</module>
+  </modules>
+
   <properties>
     <encoding>utf-8</encoding>
     <java.version>11</java.version>

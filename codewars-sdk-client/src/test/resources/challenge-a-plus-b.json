@@ -1,0 +1,41 @@
+{
+  "id": "5512a0b0509063e57d0003f5",
+  "name": "A + B",
+  "slug": "a-plus-b",
+  "category": "bug_fixes",
+  "publishedAt": "2015-03-25T11:58:48.246Z",
+  "approvedAt": "2016-06-29T04:57:03.881Z",
+  "languages": [
+    "java",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/5512a0b0509063e57d0003f5",
+  "rank": {
+    "id": -8,
+    "name": "8 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-03-25T11:49:05.491Z",
+  "createdBy": {
+    "username": "ZhulanovAA",
+    "url": "https://www.codewars.com/users/ZhulanovAA"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "Vasya Pupkin just started learning Java and C#. At first, he decided to write simple program that was supposed to sum up two small numbers (numbers and their sum fit in a byte), but it didn't work. Vasya was too sad to find out what is wrong. Help him to correct the mistake.",
+  "totalAttempts": 13794,
+  "totalCompleted": 6948,
+  "totalStars": 53,
+  "voteScore": 815,
+  "tags": [
+    "Fundamentals",
+    "Debugging"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

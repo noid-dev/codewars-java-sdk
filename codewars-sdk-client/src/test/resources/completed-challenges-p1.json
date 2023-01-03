@@ -1,0 +1,24 @@
+{
+  "totalPages": 1,
+  "totalItems": 2,
+  "data": [
+    {
+      "id": "5512a0b0509063e57d0003f5",
+      "name": "A + B",
+      "slug": "a-plus-b",
+      "completedLanguages": [
+        "java"
+      ],
+      "completedAt": "2021-08-19T16:54:46.743Z"
+    },
+    {
+      "id": "50654ddff44f800200000004",
+      "name": "Multiply",
+      "slug": "multiply",
+      "completedLanguages": [
+        "java"
+      ],
+      "completedAt": "2021-03-15T06:08:12.664Z"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "63b374788450087dfd49058a",
+  "username": "nobilo.imifel",
+  "name": null,
+  "honor": 0,
+  "clan": null,
+  "leaderboardPosition": null,
+  "skills": null,
+  "ranks": {
+    "overall": {
+      "rank": -8,
+      "name": "8 kyu",
+      "color": "white",
+      "score": 0
+    }
+  },
+  "codeChallenges": {
+    "totalAuthored": 0,
+    "totalCompleted": 0
+  }
+}
