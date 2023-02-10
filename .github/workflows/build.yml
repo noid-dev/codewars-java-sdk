@@ -1,0 +1,60 @@
+name: Build CI
+
+on:
+  push:
+    branches: [ main, develop ]
+    tags: [ '[0-9]+.[0-9]+.[0-9]+' ]
+  pull_request:
+    branches: [ develop ]
+    types: [ opened, reopened, synchronize ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-project:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 1
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+      - name: Setup Java
+        uses: actions/setup-java@1df8dbefe2a8cbc99770194893dd902763bee34b
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+      - name: Executable Maven Wrapper
+        run: chmod +x ./mvnw
+      - name: Test project
+        run: ./mvnw test
+
+  quality-check:
+    needs: test-project
+    runs-on: ubuntu-22.04
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+      - name: Setup Java
+        uses: actions/setup-java@1df8dbefe2a8cbc99770194893dd902763bee34b
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@3ebbd71c74ef574dbc558c82f70e52732c8b44fe
+        with:
+          languages: java
+          queries: security-and-quality
+      - name: Executable Maven Wrapper
+        run: chmod +x ./mvnw
+      - name: Compile project
+        run: ./mvnw compile
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@3ebbd71c74ef574dbc558c82f70e52732c8b44fe
