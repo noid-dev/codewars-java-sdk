@@ -29,7 +29,7 @@
     <jackson.version>2.14.1</jackson.version>
     <jsr305.version>3.0.2</jsr305.version>
     <swagger.version>1.6.9</swagger.version>
-    <junit.version>5.8.2</junit.version>
+    <junit.version>5.9.2</junit.version>
   </properties>
 
   <dependencyManagement>
