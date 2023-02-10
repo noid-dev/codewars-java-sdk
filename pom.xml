@@ -26,7 +26,7 @@
   <properties>
     <encoding>utf-8</encoding>
     <java.version>11</java.version>
-    <jackson.version>2.14.1</jackson.version>
+    <jackson.version>2.14.2</jackson.version>
     <jsr305.version>3.0.2</jsr305.version>
     <swagger.version>1.6.9</swagger.version>
     <junit.version>5.8.2</junit.version>
