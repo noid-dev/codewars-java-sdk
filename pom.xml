@@ -28,7 +28,7 @@
     <java.version>11</java.version>
     <jackson.version>2.15.0</jackson.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <swagger.version>1.6.10</swagger.version>
+    <swagger.version>1.6.11</swagger.version>
     <junit.version>5.9.3</junit.version>
   </properties>
 
