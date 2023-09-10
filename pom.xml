@@ -28,6 +28,7 @@
 
   <modules>
     <module>codewars-sdk-client</module>
+    <module>codewars-sdk-sample</module>
   </modules>
 
   <properties>
@@ -109,6 +110,10 @@
               </goals>
             </execution>
           </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
