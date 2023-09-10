@@ -1,0 +1,27 @@
+name: Publish to GitHub Packages
+
+on:
+  release:
+    types: [ created ]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
+      - name: Setup Java
+        uses: actions/setup-java@cd89f46ac9d01407894225f350157564c9c7cee2
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Executable Maven Wrapper
+        run: chmod +x ./mvnw
+      - name: Publish package
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./mvnw --batch-mode deploy
