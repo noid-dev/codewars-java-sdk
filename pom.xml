@@ -18,9 +18,16 @@
     <url>https://github.com/noid-dev/</url>
   </organization>
 
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/noid-dev/codewars-sdk-parent</url>
+    </repository>
+  </distributionManagement>
+
   <modules>
     <module>codewars-sdk-client</module>
-    <module>codewars-sdk-sample</module>
   </modules>
 
   <properties>
