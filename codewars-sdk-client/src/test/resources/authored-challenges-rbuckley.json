@@ -36,7 +36,8 @@
         "c",
         "cobol",
         "d",
-        "factor"
+        "factor",
+        "rust"
       ]
     }
   ]
