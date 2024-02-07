@@ -33,10 +33,8 @@ public class LazyList<E> extends AbstractList<E> {
       throw new IllegalArgumentException(i + " is not valid index.");
     }
     if (!loaded.containsKey(i)) {
-      int pageNumber = i / pageSize;
-      int indexOffset = pageNumber * pageSize;
-      List<E> page = pageLoader.apply(pageNumber);
-      addItems(indexOffset, page);
+      List<E> page = pageLoader.apply(i / pageSize);
+      addItems(i, page);
     }
     return loaded.get(i);
   }

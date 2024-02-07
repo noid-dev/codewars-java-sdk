@@ -2,7 +2,7 @@ package dev.noid.codewars.sample;
 
 import dev.noid.codewars.client.CodewarsClient;
 import dev.noid.codewars.client.model.CompletedChallenge;
-import java.util.List;
+import java.util.Iterator;
 
 public class Main {
 
@@ -21,11 +21,12 @@ public class Main {
 
   private static String findLastSolvedChallenge(CodewarsClient codewars, String username) {
     // sorted by completion date, from most recent to oldest.
-    List<CompletedChallenge> completed = codewars.listCompletedChallenges(username);
-    if (completed.isEmpty()) {
+    Iterable<CompletedChallenge> completed = codewars.listCompletedChallenges(username);
+    Iterator<CompletedChallenge> challengeIterator = completed.iterator();
+    if (challengeIterator.hasNext()) {
       return "<Nan>";
     }
-    String recentSolvedId = completed.get(0).getId();
+    String recentSolvedId = challengeIterator.next().getId();
     return codewars.getCodeChallenge(recentSolvedId).getUrl();
   }
 }
