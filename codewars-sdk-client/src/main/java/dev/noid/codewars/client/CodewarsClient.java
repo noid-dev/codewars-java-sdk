@@ -8,7 +8,7 @@ import dev.noid.codewars.client.model.CompletedChallenge;
 import dev.noid.codewars.client.model.CompletedChallenges;
 import dev.noid.codewars.client.model.User;
 import java.util.List;
-import java.util.function.IntFunction;
+import java.util.Map;
 
 public final class CodewarsClient {
 
@@ -41,9 +41,11 @@ public final class CodewarsClient {
 
   public List<CompletedChallenge> listCompletedChallenges(String idOrUsername) throws ApiException {
     CompletedChallenges firstPage = usersApi.listCompletedChallenges(idOrUsername, 0);
-    List<CompletedChallenge> recentChallenges = firstPage.getData();
-    IntFunction<List<CompletedChallenge>> pageLoader = page -> usersApi.listCompletedChallenges(idOrUsername, page).getData();
-    return new LazyList<>(pageLoader, recentChallenges, recentChallenges.size(), firstPage.getTotalItems());
+    return new PaginatedList<>(
+        page -> usersApi.listCompletedChallenges(idOrUsername, page).getData(),
+        firstPage.getTotalPages(),
+        firstPage.getTotalItems(),
+        Map.of(0, firstPage.getData()));
   }
 
   public CodeChallenge getCodeChallenge(String idOrSlag) throws ApiException {
