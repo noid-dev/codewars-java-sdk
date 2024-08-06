@@ -7,10 +7,8 @@ import dev.noid.codewars.client.model.CodeChallenge;
 import dev.noid.codewars.client.model.CompletedChallenge;
 import dev.noid.codewars.client.model.CompletedChallenges;
 import dev.noid.codewars.client.model.User;
-import java.util.Collection;
-import java.util.function.Function;
-import java.util.function.IntFunction;
-import java.util.function.ToIntFunction;
+import java.util.List;
+import java.util.Map;
 
 public final class CodewarsClient {
 
@@ -37,15 +35,17 @@ public final class CodewarsClient {
     return usersApi.getUser(idOrUsername);
   }
 
-  public Collection<AuthoredChallenge> listAuthoredChallenges(String idOrUsername) throws ApiException {
+  public List<AuthoredChallenge> listAuthoredChallenges(String idOrUsername) throws ApiException {
     return usersApi.listAuthoredChallenges(idOrUsername).getData();
   }
 
-  public Iterable<CompletedChallenge> listCompletedChallenges(String idOrUsername) throws ApiException {
-    IntFunction<CompletedChallenges> pageFetcher = pageIndex -> usersApi.listCompletedChallenges(idOrUsername, pageIndex);
-    ToIntFunction<CompletedChallenges> indexRefresher = CompletedChallenges::getTotalPages;
-    Function<CompletedChallenges, Collection<CompletedChallenge>> dataExtractor = CompletedChallenges::getData;
-    return new Pagination<>(pageFetcher, indexRefresher, dataExtractor);
+  public List<CompletedChallenge> listCompletedChallenges(String idOrUsername) throws ApiException {
+    CompletedChallenges firstPage = usersApi.listCompletedChallenges(idOrUsername, 0);
+    return new PaginatedList<>(
+        page -> usersApi.listCompletedChallenges(idOrUsername, page).getData(),
+        firstPage.getTotalPages(),
+        firstPage.getTotalItems(),
+        Map.of(0, firstPage.getData()));
   }
 
   public CodeChallenge getCodeChallenge(String idOrSlag) throws ApiException {
