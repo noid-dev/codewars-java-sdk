@@ -25,7 +25,7 @@ public class Main {
     if (completed.isEmpty()) {
       return "<Nan>";
     }
-    String recentSolvedId = completed.getFirst().getId();
+    String recentSolvedId = completed.get(0).getId();
     return codewars.getCodeChallenge(recentSolvedId).getUrl();
   }
 }
