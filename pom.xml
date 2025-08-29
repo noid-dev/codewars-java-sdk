@@ -34,7 +34,7 @@
   <properties>
     <encoding>utf-8</encoding>
     <java.version>11</java.version>
-    <jackson.version>2.19.2</jackson.version>
+    <jackson.version>2.20.0</jackson.version>
     <jsr305.version>3.0.2</jsr305.version>
     <swagger.version>1.6.16</swagger.version>
     <junit.version>5.13.4</junit.version>
